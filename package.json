@@ -1,0 +1,56 @@
+{
+  "name": "reativa-snippets",
+  "displayName": "Reativa Snippets",
+  "version": "1.0.0",
+  "description": "Code snippets for VSCode",
+  "categories": [
+    "Snippets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PauloLuan/vscode-snippets"
+  },
+  "license": "MIT",
+  "publisher": "PauloLuan",
+  "scripts": {
+    "format": "npm run format:sort-json && npm run format:prettier",
+    "format:prettier": "prettier-standard --write *.md snippets/*",
+    "format:sort-json": "sort-json snippets/snippets.json",
+    "publish": "vsce publish",
+    "test": "jest --ci",
+    "test:watch": "jest --watch"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "jest": "26.1.0",
+    "prettier-standard": "^16.4.1",
+    "sort-json": "^2.0.0",
+    "vsce": "^1.77.0"
+  },
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "galleryBanner": {
+    "color": "#99424f",
+    "theme": "light"
+  }
+}
