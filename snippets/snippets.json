@@ -1,35 +1,35 @@
 {
-  "afterAll": {
+  "jest:afterAll": {
     "body": "afterAll(async () => {\n\t$0\n})",
     "description": "afterAll function is called once after all specs",
     "prefix": "aa",
     "scope": "source.js"
   },
-  "afterEach": {
+  "jest:afterEach": {
     "body": "afterEach(async () => {\n\t$0\n})",
     "description": "afterEach function is called once after each spec",
     "prefix": "ae",
     "scope": "source.js"
   },
-  "beforeAll": {
+  "jest:beforeAll": {
     "body": "beforeAll(async () => {\n\t$0\n})",
     "description": "beforeAll function is called once before all specs",
     "prefix": "ba",
     "scope": "source.js"
   },
-  "beforeEach": {
+  "jest:beforeEach": {
     "body": "beforeEach(async () => {\n\t$0\n})",
     "description": "beforeEach function is called once before each spec",
     "prefix": "be",
     "scope": "source.js"
   },
-  "describe": {
+  "jest:describe": {
     "body": "describe('${1:Name of the group}', async () => {\n\t$0\n})",
     "description": "creates a describe block",
     "prefix": "desc",
     "scope": "source.js"
   },
-  "describe.each": {
+  "jest:describe.each": {
     "body": [
       "describe.each([${1:[1, 2], [2, 4]}])(",
       "\t'${2:double(%d)}',",
@@ -44,25 +44,25 @@
     "prefix": "desce",
     "scope": "source.js"
   },
-  "describe.only": {
+  "jest:describe.only": {
     "body": "describe.only('${1:Name of the group}', async () => {\n\t$0\n})",
     "description": "creates a describe block that runs only",
     "prefix": "desco",
     "scope": "source.js"
   },
-  "describe.skip": {
+  "jest:describe.skip": {
     "body": "describe.skip('${1:Name of the group}', async () => {\n\t$0\n})",
     "description": "creates a describe block that will be skipped",
     "prefix": "descs",
     "scope": "source.js"
   },
-  "it": {
+  "jest:it": {
     "body": "it('${1:should }', async () => {\n\t$0\n})",
     "description": "creates an it block",
     "prefix": "it",
     "scope": "source.js"
   },
-  "it.each": {
+  "jest:it.each": {
     "body": [
       "it.each([${1:[1, 2], [2, 4]}])(",
       "\t'${2:double(%d)}',",
@@ -75,31 +75,31 @@
     "prefix": "ite",
     "scope": "source.js"
   },
-  "it.only": {
+  "jest:it.only": {
     "body": "it.only('${1:should }', async () => {\n\t$0\n})",
     "description": "creates an it block that runs only",
     "prefix": "ito",
     "scope": "source.js"
   },
-  "it.skip": {
+  "jest:it.skip": {
     "body": "it.skip('${1:should }', async () => {\n\t$0\n})",
     "description": "creates an it block that will be skipped",
     "prefix": "its",
     "scope": "source.js"
   },
-  "it.todo": {
+  "jest:it.todo": {
     "body": "it.todo('${1:should }')",
     "description": "creates a test placeholder",
     "prefix": "itt",
     "scope": "source.js"
   },
-  "it:async": {
+  "jest:it:async": {
     "body": "it('${1:should }', async () => {\n\t$0\n})",
     "description": "creates an it block with async callback function",
     "prefix": "ita",
     "scope": "source.js"
   },
-  "template:cut": {
+  "jest:template:cut": {
     "body": [
       "describe('${1:Name of the group}', () => {\n",
       "\tlet ${2:cut}\n",
@@ -114,19 +114,19 @@
     "prefix": "test",
     "scope": "source.js"
   },
-  "toBe": {
+  "jest:toBe": {
     "body": "expect($1).toBe($0)",
     "description": "expects the first argument to be equal with the second one",
     "prefix": "tb",
     "scope": "source.js"
   },
-  "toEqual": {
+  "jest:toEqual": {
     "body": "expect($1).toEqual($0)",
     "description": "expects the first argument to be equal with the second one",
     "prefix": "te",
     "scope": "source.js"
   },
-  "toHaveBeenCalled": {
+  "jest:toHaveBeenCalled": {
     "body": "expect($1).toHaveBeenCalled()$0",
     "description": "returns true if the spy was called",
     "prefix": "thbc",
