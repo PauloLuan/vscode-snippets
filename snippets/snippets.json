@@ -1,0 +1,135 @@
+{
+  "afterAll": {
+    "body": "afterAll(async () => {\n\t$0\n})",
+    "description": "afterAll function is called once after all specs",
+    "prefix": "aa",
+    "scope": "source.js"
+  },
+  "afterEach": {
+    "body": "afterEach(async () => {\n\t$0\n})",
+    "description": "afterEach function is called once after each spec",
+    "prefix": "ae",
+    "scope": "source.js"
+  },
+  "beforeAll": {
+    "body": "beforeAll(async () => {\n\t$0\n})",
+    "description": "beforeAll function is called once before all specs",
+    "prefix": "ba",
+    "scope": "source.js"
+  },
+  "beforeEach": {
+    "body": "beforeEach(async () => {\n\t$0\n})",
+    "description": "beforeEach function is called once before each spec",
+    "prefix": "be",
+    "scope": "source.js"
+  },
+  "describe": {
+    "body": "describe('${1:Name of the group}', async () => {\n\t$0\n})",
+    "description": "creates a describe block",
+    "prefix": "desc",
+    "scope": "source.js"
+  },
+  "describe.each": {
+    "body": [
+      "describe.each([${1:[1, 2], [2, 4]}])(",
+      "\t'${2:double(%d)}',",
+      "\t(${3:input, expected}) => {",
+      "\t\tit(`returns \\${expected}`, async () => {",
+      "\t\t\t${4:expect(double(input)).toBe(expected)}",
+      "\t\t})",
+      "\t}",
+      ")"
+    ],
+    "description": "creates a describe block with different test data sets",
+    "prefix": "desce",
+    "scope": "source.js"
+  },
+  "describe.only": {
+    "body": "describe.only('${1:Name of the group}', async () => {\n\t$0\n})",
+    "description": "creates a describe block that runs only",
+    "prefix": "desco",
+    "scope": "source.js"
+  },
+  "describe.skip": {
+    "body": "describe.skip('${1:Name of the group}', async () => {\n\t$0\n})",
+    "description": "creates a describe block that will be skipped",
+    "prefix": "descs",
+    "scope": "source.js"
+  },
+  "it": {
+    "body": "it('${1:should }', async () => {\n\t$0\n})",
+    "description": "creates an it block",
+    "prefix": "it",
+    "scope": "source.js"
+  },
+  "it.each": {
+    "body": [
+      "it.each([${1:[1, 2], [2, 4]}])(",
+      "\t'${2:double(%d)}',",
+      "\t(${3:input, expected}) => {",
+      "\t\t${0:expect(double(input)).toBe(expected)}",
+      "\t}",
+      ")"
+    ],
+    "description": "creates an it block with different test data sets",
+    "prefix": "ite",
+    "scope": "source.js"
+  },
+  "it.only": {
+    "body": "it.only('${1:should }', async () => {\n\t$0\n})",
+    "description": "creates an it block that runs only",
+    "prefix": "ito",
+    "scope": "source.js"
+  },
+  "it.skip": {
+    "body": "it.skip('${1:should }', async () => {\n\t$0\n})",
+    "description": "creates an it block that will be skipped",
+    "prefix": "its",
+    "scope": "source.js"
+  },
+  "it.todo": {
+    "body": "it.todo('${1:should }')",
+    "description": "creates a test placeholder",
+    "prefix": "itt",
+    "scope": "source.js"
+  },
+  "it:async": {
+    "body": "it('${1:should }', async () => {\n\t$0\n})",
+    "description": "creates an it block with async callback function",
+    "prefix": "ita",
+    "scope": "source.js"
+  },
+  "template:cut": {
+    "body": [
+      "describe('${1:Name of the group}', () => {\n",
+      "\tlet ${2:cut}\n",
+      "\tbeforeEach(async () => {\n\t\t$2 = $3\n\t})\n",
+      "\tafterEach(async () => {\n\t\t$2 = $3\n\t})\n",
+      "\tit('${1:should }', async () => {",
+      "\t\texpect($2).toBe($0)",
+      "\t})\n",
+      "})"
+    ],
+    "description": "creates a template to test a class under test",
+    "prefix": "test",
+    "scope": "source.js"
+  },
+  "toBe": {
+    "body": "expect($1).toBe($0)",
+    "description": "expects the first argument to be equal with the second one",
+    "prefix": "tb",
+    "scope": "source.js"
+  },
+  "toEqual": {
+    "body": "expect($1).toEqual($0)",
+    "description": "expects the first argument to be equal with the second one",
+    "prefix": "te",
+    "scope": "source.js"
+  },
+  "toHaveBeenCalled": {
+    "body": "expect($1).toHaveBeenCalled()$0",
+    "description": "returns true if the spy was called",
+    "prefix": "thbc",
+    "scope": "source.js"
+  }
+}
