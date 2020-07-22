@@ -17,7 +17,7 @@
     "format:prettier": "prettier-standard --write *.md snippets/*",
     "format:sort-json": "sort-json snippets/snippets.json",
     "publish": "vsce publish",
-    "test": "jest --ci",
+    "test": "jest --ci --runInBand --coverage",
     "test:watch": "jest --watch"
   },
   "contributes": {
