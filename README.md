@@ -1,5 +1,7 @@
 # reativa-snippets
 
+[![Actions Status](https://github.com/pauloluan/vscode-snippets/workflows/Node CI/badge.svg)](https://github.com/pauloluan/vscode-snippets/actions)
+
 ## Test Snippets
 
 Below is a list of all available snippets and the triggers of each one. The **→** means the `TAB` key.
