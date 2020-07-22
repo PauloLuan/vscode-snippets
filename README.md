@@ -19,23 +19,23 @@ Below is a list of all available snippets and the triggers of each one. The **�
 
 ### Tests
 
-|   Trigger | Content              |
-| --------: | -------------------- |
-|     `it→` | it                   |
-|    `ito→` | it.only              |
-|    `its→` | it.skip              |
-|    `itt→` | it.todo              |
-|    `ite→` | it.each              |
-|    `ita→` | it(..., async ...)   |
-|   `test→` | test.each            |
+| Trigger | Content            |
+| ------: | ------------------ |
+|   `it→` | it                 |
+|  `ito→` | it.only            |
+|  `its→` | it.skip            |
+|  `itt→` | it.todo            |
+|  `ite→` | it.each            |
+|  `ita→` | it(..., async ...) |
+| `test→` | test.each          |
 
 ### Expect
 
-|   Trigger | Content                            |
-| --------: | ---------------------------------- |
-|    `exp→` | expect                             |
-|     `tb→` | toBe                               |
-|     `te→` | toEqual                            |
+| Trigger | Content |
+| ------: | ------- |
+|  `exp→` | expect  |
+|   `tb→` | toBe    |
+|   `te→` | toEqual |
 
 ## Settings
 
