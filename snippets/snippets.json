@@ -164,120 +164,94 @@
     "description": "Displays a message in the console but also displays a blue information icon along with the logged message",
     "prefix": "cin"
   },
-  "js:consoleLog": {
-    "body": "console.log(${1:object})",
-    "description": "Displays a message in the console",
-    "prefix": "clg"
-  },
   "js:consoleLogObject": {
-    "body": "console.log('${1:object} :>> ', ${1:object})",
+    "body": [
+      "==============",
+      "console.log('${1:object} :>> ', ${1:object})",
+      "=============="
+    ],
     "description": "Displays an object in the console with its name",
-    "prefix": "clo"
+    "prefix": ["console", "log"]
   },
   "js:consoleTable": {
     "body": "console.table(${1:object})",
     "description": "Displays tabular data as a table.",
-    "prefix": "clt"
+    "prefix": "contab"
   },
   "js:consoleTime": {
     "body": "console.time(${1:object})",
     "description": "Sets starting point for execution time measurement",
-    "prefix": "cti"
+    "prefix": "contime"
   },
   "js:consoleTimeEnd": {
     "body": "console.timeEnd(${1:object})",
     "description": "Sets end point for execution time measurement",
-    "prefix": "cte"
+    "prefix": "contimeend"
   },
   "js:consoleTrace": {
     "body": "console.trace(${1:object})",
     "description": "Prints a stack trace from the point where the method was called",
-    "prefix": "ctr"
+    "prefix": "contra"
   },
   "js:consoleWarn": {
     "body": "console.warn(${1:object})",
     "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message",
-    "prefix": "cwa"
+    "prefix": "conwar"
   },
   "js:constructor": {
     "body": "constructor(${1:params}) {\n\t${0}\n}",
     "description": "Add default constructor in a class in ES6 syntax",
-    "prefix": "con"
+    "prefix": "constructor"
   },
   "js:destructingArray": {
     "body": "const [${2:propertyName}] = ${1:arrayToDestruct}",
     "description": "Creates and assigns a local variable using array destructing",
-    "prefix": "dar"
+    "prefix": "destructingArray"
   },
   "js:destructingObject": {
     "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
     "description": "Creates and assigns a local variable using object destructing",
-    "prefix": "dob"
+    "prefix": "destructingObject"
   },
   "js:exportClass": {
     "body": "export default class ${1:className} {\n\t$0\n}\n",
     "description": "Export default class in ES6 syntax",
-    "prefix": "ecl"
-  },
-  "js:exportClassExtends": {
-    "body": "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
-    "description": "Export default class which extends a base one in ES6 syntax",
-    "prefix": "ece"
+    "prefix": "class"
   },
   "js:exportDefaultFunction": {
     "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}) {\n\t$0\n}\n",
     "description": "Export default function in ES6 syntax",
-    "prefix": "edf"
+    "prefix": "exportdefault"
   },
   "js:exportNamedFunction": {
     "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
     "description": "Export named function in ES6 syntax",
-    "prefix": "enf"
+    "prefix": "exportfun"
   },
   "js:exportNamedVariable": {
     "body": "export const ${1:exportVariable} = ${2:localVariable}\n",
     "description": "Export named variable in ES6 syntax",
-    "prefix": "env"
+    "prefix": "export"
   },
   "js:forEach": {
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
     "description": "Creates a forEach statement in ES6 syntax",
-    "prefix": "fre"
+    "prefix": "forEach"
   },
   "js:forIn": {
     "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
     "description": "Iterating over property values of iterable objects",
-    "prefix": "fin"
+    "prefix": "forin"
   },
   "js:forOf": {
     "body": "for (const ${1:item} of ${2:object}) {\n\t${0}\n}",
     "description": "Iterating over property names of iterable objects",
-    "prefix": "fof"
-  },
-  "js:import": {
-    "body": "import ${2:moduleName} from '${1:module}'$0",
-    "description": "Imports entire module statement in ES6 syntax",
-    "prefix": "imp"
-  },
-  "js:importAs": {
-    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
-    "description": "Imports a specific portion of the module by assigning a local alias in ES6 syntax",
-    "prefix": "ima"
+    "prefix": "forof"
   },
   "js:importDestructing": {
     "body": "import { $2 } from '${1:module}'$0",
     "description": "Imports only a portion of the module in ES6 syntax",
-    "prefix": "imd"
-  },
-  "js:importEverything": {
-    "body": "import * as ${2:alias} from '${1:module}'$0",
-    "description": "Imports everything as alias from the module in ES6 syntax",
-    "prefix": "ime"
-  },
-  "js:importNoModuleName": {
-    "body": "import '${1:module}'$0",
-    "description": "Imports entire module in ES6 syntax without module name",
-    "prefix": "imn"
+    "prefix": "import"
   },
   "js:method": {
     "body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
@@ -292,46 +266,31 @@
   "js:namedFunction": {
     "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
     "description": "Creates a named function in ES6 syntax",
-    "prefix": "nfn"
+    "prefix": "func"
   },
   "js:promise": {
     "body": "return new Promise((resolve, reject) => {\n\t${1}\n})",
     "description": "Creates and returns a new Promise in the standard ES6 syntax",
-    "prefix": "prom"
-  },
-  "js:propertyGet": {
-    "body": "get ${1:propertyName}() {\n\treturn this.${0}\n}",
-    "description": "Creates a getter property inside a class in ES6 syntax",
-    "prefix": "pge"
-  },
-  "js:propertyset": {
-    "body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
-    "description": "Creates a setter property inside a class in ES6 syntax",
-    "prefix": "pse"
-  },
-  "js:require": {
-    "body": "require('${1:package}')",
-    "description": "Require a package",
-    "prefix": "rqr"
+    "prefix": "promise"
   },
   "js:requireToConst": {
     "body": "const ${1:packageName} = require('${1:package}')$0",
     "description": "Require a package to const",
-    "prefix": "req"
+    "prefix": "require"
   },
   "js:setInterval": {
     "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms})",
     "description": "Executes the given function at specified intervals in ES6 syntax",
-    "prefix": "sti"
+    "prefix": "setInterval"
   },
   "js:setTimeOut": {
     "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
     "description": "Executes the given function after the specified delay in ES6 syntax",
-    "prefix": "sto"
+    "prefix": "setTimeOut"
   },
   "js:thenCatch": {
     "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
     "description": "Add the .then and .catch methods to handle promises",
-    "prefix": "thenc"
+    "prefix": ".then"
   }
 }
