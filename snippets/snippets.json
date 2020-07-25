@@ -292,5 +292,56 @@
     "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
     "description": "Add the .then and .catch methods to handle promises",
     "prefix": ".then"
+  },
+  "react:Export Styled Component": {
+    "body": ["export const $1 = styled.$2`", "\t$3", "`"],
+    "prefix": "estyled"
+  },
+  "react:Story": {
+    "body": [
+      "import React from 'react'",
+      "import { $1 } from '.'",
+      "",
+      "export default {",
+      "\ttitle: '$1',",
+      "\tcomponent: $1",
+      "}",
+      "",
+      "export const $1Version1 = () => (",
+      "\t<$1></$1>",
+      ")"
+    ],
+    "prefix": "story"
+  },
+  "react:componentFunctionalTypescript": {
+    "body": [
+      "import React from 'react'",
+      "",
+      "// import { Container } from './styles'",
+      "",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
+      "  return <><h1>hello mindingo</h1></>",
+      "}",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}"
+    ],
+    "description": "Create React TypeScript Functional Component",
+    "prefix": "reactcomponent"
+  },
+  "react:styles": {
+    "body": [
+      "import styled from 'styled-components'",
+      "",
+      "export const ${1:Container} = styled.${2:View}`",
+      "  ${3}",
+      "`",
+      ""
+    ],
+    "description": "Create React Styled Components file",
+    "prefix": "styled"
+  },
+  "react:useEffect": {
+    "body": ["useEffect(() => {", "\t$1", "}, [])"],
+    "prefix": "rue"
   }
 }
