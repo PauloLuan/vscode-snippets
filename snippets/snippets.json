@@ -2,22 +2,22 @@
   "jest:afterAll": {
     "body": "afterAll(async () => {\n\t$0\n})",
     "description": "afterAll function is called once after all specs",
-    "prefix": "aa"
+    "prefix": "afterAll"
   },
   "jest:afterEach": {
     "body": "afterEach(async () => {\n\t$0\n})",
     "description": "afterEach function is called once after each spec",
-    "prefix": "ae"
+    "prefix": "afterEach"
   },
   "jest:beforeAll": {
     "body": "beforeAll(async () => {\n\t$0\n})",
     "description": "beforeAll function is called once before all specs",
-    "prefix": "ba"
+    "prefix": "beforeAll"
   },
   "jest:beforeEach": {
     "body": "beforeEach(async () => {\n\t$0\n})",
     "description": "beforeEach function is called once before each spec",
-    "prefix": "be"
+    "prefix": "beforeEach"
   },
   "jest:describe": {
     "body": "describe('${1:Name of the group}', async () => {\n\t$0\n})",
