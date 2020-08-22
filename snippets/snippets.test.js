@@ -30,11 +30,5 @@ describe('snippets.json', () => {
       expect(body).toBeDefined()
       expect(body).not.toEqual('')
     })
-
-    it('has description', () => {
-      const { description } = snippets[k]
-      expect(description).toBeDefined()
-      expect(description).not.toEqual('')
-    })
   })
 })

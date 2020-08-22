@@ -1,4 +1,9 @@
 {
+  "css:media": {
+    "body": ["@media (min-width: 768px) {\n\t$0\n}"],
+    "description": "creates a css media block",
+    "prefix": "@media"
+  },
   "jest:afterAll": {
     "body": "afterAll(async () => {\n\t$0\n})",
     "description": "afterAll function is called once after all specs",
@@ -216,7 +221,7 @@
   "js:exportClass": {
     "body": "export default class ${1:className} {\n\t$0\n}\n",
     "description": "Export default class in ES6 syntax",
-    "prefix": "class"
+    "prefix": "classjs"
   },
   "js:exportDefaultFunction": {
     "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}) {\n\t$0\n}\n",
@@ -328,48 +333,134 @@
     "description": "Create React TypeScript Functional Component",
     "prefix": "reactcomponent"
   },
-  "react:styles": {
+  "react:globalstyles": {
     "body": [
       "import { createGlobalStyle } from 'styled-components'",
       "",
       "export const GlobalStyles = createGlobalStyle`",
       "  * {",
-      "    margin: 0;",
-      "    padding: 0;",
-      "    box-sizing: border-box;",
+      "    margin: 0",
+      "    padding: 0",
+      "    box-sizing: border-box",
       "  }",
       "  html {",
-      "    min-height: 100%;",
-      "    background: var(--primary);",
+      "    min-height: 100%",
+      "    background: var(--primary)",
       "  }",
       "  *, button, input {",
-      "    border: 0;",
-      "    background: none;",
-      "    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;",
-      "    color: var(--black);",
-      "    transition: color .2s ease-out;",
+      "    border: 0",
+      "    background: none",
+      "    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji",
+      "    color: var(--black)",
+      "    transition: color .2s ease-out",
       "  }",
       "  ul {",
-      "    list-style: none;",
+      "    list-style: none",
       "  }",
       "",
       "  :root {",
-      "    --primary: #fff;",
+      "    --primary: #fff",
       "  }",
       "`"
     ],
     "description": "Create React Styled Components global file",
     "prefix": "styledglobal"
   },
+  "react:prev state": {
+    "body": [
+      "const prev${1/(.*)/${1:/capitalize}/}Ref = useRef()",
+      "useEffect(() => {",
+      "\tprev${1/(.*)/${1:/capitalize}/}Ref.current = $1",
+      "})",
+      "const prev$1 = prev${1:/capitalize}/}Ref.current"
+    ],
+    "prefix": "prev"
+  },
+  "react:styles": {
+    "body": [
+      "import styled from 'styled-components'",
+      "",
+      "export const ${1:Container} = styled.${2:div}`",
+      "  ${3}",
+      "`",
+      ""
+    ],
+    "description": "Create React Styled Components file",
+    "prefix": "styled"
+  },
+  "react:useCallback": {
+    "body": [
+      "const ${1:memoizedCallback} = useCallback(",
+      "\t() => {",
+      "\t\t${2:doSomething}(${3:a}, ${4:b})",
+      "\t},",
+      "\t[${5:a}, ${6:b}],",
+      ")$0"
+    ],
+    "description": "React useCallback() hook",
+    "prefix": "useCallback"
+  },
+  "react:useContext": {
+    "body": ["const $1 = useContext($2)$0"],
+    "description": "React useContext() hook",
+    "prefix": "useContext"
+  },
+  "react:useDispatch": {
+    "body": ["const $1 = $2 => dispatch($3)"],
+    "prefix": "useDispatch"
+  },
+  "react:useDispatchFunction": {
+    "body": ["const dispatch = useDispatch()"],
+    "prefix": "useDispatchFunction"
+  },
   "react:useEffect": {
-    "body": ["useEffect(() => {", "\t$1", "}, [])"],
-    "prefix": "rue"
+    "body": [
+      "useEffect(() => {",
+      "\t$1",
+      "\n\treturn cleanUp = () => {",
+      "\t\t$2",
+      "\t}",
+      "}, [${3}])$0"
+    ],
+    "description": "React useEffect() hook",
+    "prefix": "useEffect"
+  },
+  "react:useMemo": {
+    "body": [
+      "const ${1:memoizedValue} = useMemo(() => ${2:computeExpensiveValue}(${3:a}, ${4:b}), [${5:a}, ${6:b}])$0"
+    ],
+    "description": "React useMemo() hook",
+    "prefix": "useMemo"
+  },
+  "react:useReducer": {
+    "body": [
+      "const [${1:state},${2: dispatch}] = useReducer(state, action)",
+      "\n\treturn (",
+      "\t\t",
+      "\t)"
+    ],
+    "description": "React useReducer() hook",
+    "prefix": "useReducer"
+  },
+  "react:useRef": {
+    "body": ["const $1 = useRef($2)$0"],
+    "description": "React useRef() hook",
+    "prefix": "useRef"
+  },
+  "react:useSelector": {
+    "body": ["const $1 = useSelector(state => state.$1)"],
+    "prefix": "useSelector"
+  },
+  "react:useState": {
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2)$0"],
+    "description": "React useState() hook",
+    "prefix": "useState"
   },
   "ts:Class": {
     "body": [
-      "enum CharacterType { Warrior, Mage, Healer };",
+      "enum CharacterType { Warrior, Mage, Healer }",
       "",
-      "class Character {",
+      "export default class Character {",
       "  constructor(",
       "    private name: string,",
       "    private age: number,",
@@ -378,7 +469,7 @@
       "}"
     ],
     "description": "this will create a class with a constructor and backing fields",
-    "prefix": "ts-class"
+    "prefix": "class"
   },
   "ts:Class-Constructor": {
     "body": [
@@ -389,17 +480,17 @@
       ") {}"
     ],
     "description": "this will create a constructor and backing fields",
-    "prefix": "ts-class-constructor"
+    "prefix": "class-constructor"
   },
   "ts:Class-Getter": {
     "body": [
       "private _$1:string",
       "get $1(): string {",
-      "  return this._$1;",
+      "  return this._$1",
       "}"
     ],
     "description": "this will create a getter",
-    "prefix": "ts-class-getter"
+    "prefix": "class-getter"
   },
   "ts:Class-Inherit": {
     "body": [
@@ -409,46 +500,46 @@
       "",
       "class Movable extends Shape {",
       "  constructor(x: number, y: number) {",
-      "    super(x, y);",
+      "    super(x, y)",
       "}",
       "",
       "  move(dx: number, dy: number) {",
-      "    this.x += dx;",
-      "    this.y += dy;",
+      "    this.x += dx",
+      "    this.y += dy",
       "  }",
       "}"
     ],
     "description": "this will create two classes, one class `Movable` inherits from `Shape`",
-    "prefix": "ts-class-inherit"
+    "prefix": "class-inherit"
   },
   "ts:Class-Setter": {
     "body": [
       "private _$1:string",
       "set $1(value): string {",
-      "  this._$1= value;",
+      "  this._$1= value",
       "}"
     ],
     "description": "this will create a getter",
-    "prefix": "ts-class-setter"
+    "prefix": "class-setter"
   },
   "ts:Class-Setter-Getter": {
     "body": [
       "private _$1:string",
       "get $1(): string {",
-      "  return this._$1;",
+      "  return this._$1",
       "}",
       "set $1(value): string {",
-      "  this._$1;= value",
+      "  this._$1= value",
       "}"
     ],
     "description": "this will create a getter",
-    "prefix": "ts-class-setter-getter"
+    "prefix": "class-setter-getter"
   },
   "ts:Decorator": {
     "body": [
       "function color(value: string) {",
       "  return function (target) {",
-      "      target.color = value;",
+      "      target.color = value",
       "  }",
       "}",
       "",
@@ -457,38 +548,29 @@
       "  side = 3",
       "}",
       "",
-      "const cube = new Cube();",
-      "console.log( Cube['color'] );"
+      "const cube = new Cube()",
+      "console.log( Cube['color'] )"
     ],
     "description": "Creates a decorator",
-    "prefix": "ts-decorator"
+    "prefix": "decorator"
   },
   "ts:Enum": {
     "body": [
       "enum CharacterClass { Warrior, Mage, Healer }",
-      "let type: CharacterClass;",
-      "type = CharacterClass.Warrior;"
+      "let type: CharacterClass",
+      "type = CharacterClass.Warrior"
     ],
     "description": "this will create an Tuple",
-    "prefix": "ts-enum"
-  },
-  "ts:Function": {
-    "body": [
-      "let func: (x: number, y: number) => number;",
-      "func = function(a: number,b: number): number { return a + b; }",
-      "func(1, 2);"
-    ],
-    "description": "creates a function with typed params and return types",
-    "prefix": "ts-func"
+    "prefix": "enum"
   },
   "ts:Function Arrow": {
     "body": [
-      "let func: (x: number, y: number) => number;",
-      "func = (a: number,b: number) => { return a + b; }",
-      "func(1, 2);"
+      "let func: (x: number, y: number) => number",
+      "func = (a: number,b: number) => { return a + b }",
+      "func(1, 2)"
     ],
     "description": "creates an arrow function with typed params and return types",
-    "prefix": "ts-func-arrow"
+    "prefix": "func-arrow"
   },
   "ts:Function Rest": {
     "body": [
@@ -498,94 +580,94 @@
       "const fullName = buildNames('John', 'Fitzgerald', 'Kennedy') // John Fitzgerald Kennedy"
     ],
     "description": "creates a function showcasing Rest parameters",
-    "prefix": "ts-func-rest"
+    "prefix": "func-rest"
   },
   "ts:Generic class constraint": {
     "body": [
       "class Hero { name='hero' }",
       "function factory<T>(classType: { new(): T }) {",
-      "  return new classType();",
+      "  return new classType()",
       "}",
-      "factory(Hero).name; // 'hero'"
+      "factory(Hero).name // 'hero'"
     ],
     "description": "Creates a function with a parameter that can be instantiated",
-    "prefix": "ts-gen-class-constraint"
+    "prefix": "gen-class-constraint"
   },
   "ts:Interface": {
-    "body": ["interface $1 {", " property: string;", "};"],
+    "body": ["interface $1 {", " property: string", "}"],
     "description": "this will create an interface",
-    "prefix": "ts-int"
+    "prefix": "int"
   },
   "ts:Interface impl": {
     "body": [
       "interface Movable {",
       " move(x: number, y: number): void",
-      "};",
+      "}",
       "class Hero implements Movable {",
       "  move(x:number, y: number) { /* impl me */  }"
     ],
     "description": "this will create an interface and a class implementing the interface",
-    "prefix": "ts-int-impl"
+    "prefix": "int-impl"
   },
   "ts:Intersect type": {
     "body": [
       "function extend<T, U>(first: T, second: U): T & U {",
-      "  let result = <T & U>{};",
+      "  let result = <T & U>{}",
       "  for (let id in first) {",
-      "    (<any>result)[id] = (<any>first)[id];",
+      "    (<any>result)[id] = (<any>first)[id]",
       "  }",
       "  for (let id in second) {",
       "      if (!result.hasOwnProperty(id)) {",
-      "          (<any>result)[id] = (<any>second)[id];",
+      "          (<any>result)[id] = (<any>second)[id]",
       "      }",
       "  }",
-      "  return result;",
+      "  return result",
       "}",
       "",
       "class Warrior {",
       "  constructor(public name: string) { }",
       "}",
       "interface Magic {",
-      "  castSpell(): void;",
+      "  castSpell(): void",
       "}",
       "class Wizard implements Magic {",
       "  castSpell() {",
       "    console.log('wizard throws a Fireball')",
       "  }",
       "}",
-      "var warrior = extend(new Warrior('Aragorn'), new Wizard());",
-      "var warriorName = warrior.name;",
-      "warrior.castSpell();"
+      "var warrior = extend(new Warrior('Aragorn'), new Wizard())",
+      "var warriorName = warrior.name",
+      "warrior.castSpell()"
     ],
     "description": "Creates an intersection type and a mixin function",
-    "prefix": "ts-intersect"
+    "prefix": "intersect"
   },
   "ts:Template string": {
     "body": [
-      "const your_name = 'chris noring';",
+      "const your_name = 'chris noring'",
       "const twitter = 'chris_noring'",
       "const str = `Hello my name is \\${your_name\\} and my twitter is \\${twitter\\}`"
     ],
     "description": "this will create a template string",
-    "prefix": "ts-templ"
+    "prefix": "templ"
   },
   "ts:Tuple": {
     "body": [
       "let tuple: [string, string]",
       "tuple = ['chris', 'noring']",
-      "console.log(tuple[0]); // outputs 'chris'"
+      "console.log(tuple[0]) // outputs 'chris'"
     ],
     "description": "this will create an Tuple",
-    "prefix": "ts-tuple"
+    "prefix": "tuple"
   },
   "ts:Union type": {
     "body": [
-      "type StringOrInt = string | number;",
-      "const numberType: StringOrInt = 1;",
-      "const stringType: StringOrInt = 'a string';",
-      "const booleanType: StringOrInt = false;"
+      "type StringOrInt = string | number",
+      "const numberType: StringOrInt = 1",
+      "const stringType: StringOrInt = 'a string'",
+      "const booleanType: StringOrInt = false"
     ],
     "description": "Creates a union type and an example usage",
-    "prefix": "ts-union"
+    "prefix": "union"
   }
 }
