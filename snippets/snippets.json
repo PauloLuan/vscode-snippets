@@ -366,6 +366,28 @@
     "description": "Creates a nestjs DTO",
     "prefix": "nest:dto"
   },
+  "nest:entity": {
+    "body": [
+      "import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'",
+      "",
+      "@Entity('${1}')",
+      "export class ${1/(.*)/${1:/capitalize}/}Entity {",
+      "  @PrimaryGeneratedColumn()",
+      "  id: number",
+      "",
+      "  @Column({ length: 500 })",
+      "  name: string",
+      "",
+      "  @Column('text')",
+      "  description: string",
+      "",
+      "  @Column()",
+      "  isBoolean: boolean",
+      "}"
+    ],
+    "description": "Creates a nestjs Entity",
+    "prefix": "nest:entity"
+  },
   "nest:module": {
     "body": [
       "import { Module } from '@nestjs/common'",
